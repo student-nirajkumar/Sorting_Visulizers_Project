@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Sorting Visualizer</h1>
+
+    <div class="user-input" id="userInput">
+        <h2>Custom Sorting Input</h2>
+
+        <!-- Dropdown appears first -->
+        <label for="sortType">Choose sorting technique:</label>
+        <select id="sortType" onchange="showInputs()">
+            <option value="" disabled selected>Select Sorting Algorithm</option>
+            <option value="bubbleSort">Bubble Sort</option>
+            <option value="selectionSort">Selection Sort</option>
+            <option value="insertionSort">Insertion Sort</option>
+            <option value="mergeSort">Merge Sort</option>
+            <option value="quickSort">Quick Sort</option>
+            <option value="countSort">Counting Sort</option>
+        </select>
+        <br>
+
+        <!-- These fields will be hidden initially -->
+        <div id="inputFields" style="display: none;">
+            <label for="numElements">Enter number of elements:</label>
+            <input type="number" id="numElements" min="1">
+            <br>
+            <label for="elements">Enter elements (comma-separated):</label>
+            <input type="text" id="elements">
+            <br>
+            <button onclick="startSorting()">Sort</button>
+        </div>
+    </div>
+    
+    <div id="array-container"></div>
+    <audio id="audioMusic" src="horse.mp3"></audio>
+
+    <script>
+        function showInputs() {
+            document.getElementById("inputFields").style.display = "block";
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
